@@ -20,5 +20,12 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(MainActivity.this,RestaurantActivity.class));
             }
         });
+
+        findViewById(R.id.panda_mart).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this,PandaMartActivity.class));
+            }
+        });
     }
 }

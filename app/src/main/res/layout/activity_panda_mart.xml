@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PandaMartActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <include
+            android:id="@+id/toolBar"
+            layout="@layout/custom_toolbar_mart"/>
+
+
+        <EditText
+            android:id="@+id/editText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Search products &amp; categories"
+            android:textSize="13sp"
+            android:background="@drawable/edit_txt_bg"
+            android:padding="15dp"
+            android:drawableStart="@drawable/search"
+            android:drawableTint="@color/purple_200"
+            android:drawablePadding="5dp"
+            android:layout_margin="6dp"
+            android:elevation="5dp"
+            tools:targetApi="m"
+            app:layout_constraintBottom_toBottomOf="@id/toolBar"
+            app:layout_constraintTop_toBottomOf="@id/toolBar"/>
+
+        <com.smarteist.autoimageslider.SliderView
+            android:id="@+id/slider"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            app:sliderAnimationDuration="600"
+            app:sliderAutoCycleDirection="back_and_forth"
+            app:sliderIndicatorAnimationDuration="600"
+            app:sliderIndicatorEnabled="true"
+            app:sliderIndicatorGravity="center_horizontal|bottom"
+            app:sliderIndicatorMargin="15dp"
+            app:sliderIndicatorOrientation="horizontal"
+            app:sliderIndicatorPadding="3dp"
+            app:sliderIndicatorRadius="2dp"
+            app:sliderIndicatorSelectedColor="@color/purple_200"
+            app:sliderIndicatorUnselectedColor="@color/white"
+            app:sliderScrollTimeInSec="1"
+            android:layout_marginTop="10dp"
+            app:layout_constraintTop_toBottomOf="@id/editText"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_cat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            app:layout_constraintTop_toBottomOf="@id/slider"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_margin="10dp"
+            app:layout_constraintTop_toBottomOf="@id/recycler_cat">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tea &amp; Coffee"
+                android:fontFamily="@font/poppins"
+                android:textStyle="bold"
+                android:textSize="18sp"/>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rec_tea"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Snacktastic"
+                android:fontFamily="@font/poppins"
+                android:textStyle="bold"
+                android:textSize="18sp"/>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rec_snack"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"/>
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>
